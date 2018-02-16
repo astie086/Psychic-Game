@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //create an array of items to be chosen from
+    var computerChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    console.log(computerChoice);
+    
+    // create variables for wins/losses/guesses left/guesses thus far
+    // answers will store user's answers
+
+    var wins = 0;
+    var losses = 0;
+    var guessesRemaining = 20;
+    var guessesSoFar = [];  
+
+    //start game from begining
+    
+    function reset (){
+    
+    guessesRemaining = 20;
+    guessesSoFar = [];
+    computerGuess = computerChoice[Math.floor(Math.random()*computerChoice.length)];
+    console.log (computerGuess);
+    }
+
+    document.onkeyup = function(event) {
+
+    // Determines which key was pressed.
+    var userGuess = event.key;
+
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+if (userGuess === computerGuess) {
+    win++;
+    alert ("You're a regular Jonh Edward.")
+    guessesSoFar++;
+    gyessesRemaining--;
+    console.log (userGuess);
+}   
+    else {
+        loss++;
+        guessesSoFar++;
+        gyessesRemaining--;
+    }
+if (guessesRemaining === 0) {
+    alert ("You're no Cleo")
+    reset();
+    
+}
+};
+
+    
+    </script>
+</body>
+</html>
